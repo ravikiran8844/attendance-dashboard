@@ -6029,7 +6029,7 @@ h6,
   align-items: center;
   justify-content: center;
   background: #fff;
-  z-index: 999999;
+  z-index: 9999;
 }
 #preloader .spinner {
   width: 40px;
