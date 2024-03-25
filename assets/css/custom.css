@@ -169,3 +169,46 @@ font-weight: 500;
 table.dataTable th.dt-type-numeric, table.dataTable th.dt-type-date, table.dataTable td.dt-type-numeric, table.dataTable td.dt-type-date{
   text-align: start !important;
 }
+
+table tr td{
+  color: #767676;
+}
+.custom-btn{
+  border-radius: 31.224px;
+background: linear-gradient(270deg, #EEB64F -12.41%, #9F212C 93.73%);
+color: #fff !important;
+display: flex;
+width: 185px;
+height: 43.713px;
+padding: 14.831px 92.89px;
+justify-content: center;
+align-items: center;
+gap: 7.806px;
+flex-shrink: 0;
+}
+
+.dashboard-card-item__card1{
+  border-radius: 8px;
+border: 0.973px solid #921ED9;
+background: #F9EFFF;
+}
+.dashboard-card-item__card2{
+  border-radius: 9.729px;
+  border: 0.973px solid #03F;
+  background: #EBEFFF;
+}
+.dashboard-card-item__card3{
+  border-radius: 9.729px;
+border: 0.973px solid #F28E1E;
+background: #FFEDD9;
+}
+.dashboard-card-item__card4{
+  border-radius: 9.729px;
+border: 0.973px solid #57C822;
+background: #EFFFE8;
+}
+.dashboard-card-item__card5{
+  border-radius: 9.729px;
+  border: 0.973px solid #86C5C4;
+  background: #EBF8F8;
+}
