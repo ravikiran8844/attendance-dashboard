@@ -165,3 +165,7 @@ font-weight: 500;
   border-radius: 13.475px;
 
 }
+
+table.dataTable th.dt-type-numeric, table.dataTable th.dt-type-date, table.dataTable td.dt-type-numeric, table.dataTable td.dt-type-date{
+  text-align: start !important;
+}
