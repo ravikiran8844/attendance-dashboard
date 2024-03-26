@@ -223,3 +223,138 @@ background: #EFFFE8;
   height: 100vh;
 }
 
+body{
+  background: #F8F9FB;
+}
+.showroom-manager-page_store-name_warpper{
+  background: linear-gradient(78deg, #9F212C 5.52%, #C4843E 105.18%);
+}
+.showroom-manager-page_store-name{
+  color: #FFF;
+  /* font-family: "DM Sans"; */
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%; /* 40px */
+  text-transform: uppercase;
+}
+
+.showroom-manager-page_card li{
+  margin-bottom: 10px;
+}
+
+.showroom-manager-page_card{
+height: 402px;
+}
+
+
+
+
+
+#calendar {
+    max-width: 800px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 15px;
+    position: relative;
+
+}
+
+
+.fc-event {
+    border: 1px solid #eee !important;
+}
+
+.fc-content {
+    padding: 3px !important;
+}
+
+.fc-content .fc-title {
+    display: block !important;
+    overflow: hidden;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.fc-customButton-button {
+    font-size: 13px !important;
+    position: absolute;
+    top:  0px;
+    left: 50%;
+    transform: translateY(-50%);
+}
+
+
+
+#delete-modal .modal-footer > .btn {
+
+    border-radius: 3px !important; 
+    padding: 0px 8px !important;
+    font-size: 15px;
+
+ }
+
+
+.fc-scroller {
+    overflow-y: hidden !important;
+}
+
+.context-menu {
+    position: absolute;
+    z-index: 1000;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+    padding: 5px;
+}
+
+/* .context-menu.show {
+    display: block;
+  } */
+
+.context-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+.context-menu ul>li {
+    display: block;
+    ;
+    padding: 5px 15px;
+    list-style-type: none;
+    color: #333;
+    display: block;
+    cursor: pointer;
+    margin: 0 auto;
+    transition: 0.10s;
+    font-size: 13px;
+
+
+}
+
+.context-menu ul>li:hover {
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 2px;
+
+}
+
+.fa,
+.fas {
+    font-size: 13px;
+    margin-right: 4px;
+}
+
+.fc-button{
+  background: #9F212C !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  text-transform: uppercase !important;
+  opacity: 1;
+}
