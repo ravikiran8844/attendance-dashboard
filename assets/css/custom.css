@@ -358,3 +358,18 @@ height: 402px;
   text-transform: uppercase !important;
   opacity: 1;
 }
+
+
+
+.enter-attendance-table{
+  max-height: 500px;
+  overflow: auto;
+}
+
+
+
+.enter-attendance-table table{
+  border-radius: 4px;
+border: 1px solid #DDE4F3;
+background: #FFF;
+}
