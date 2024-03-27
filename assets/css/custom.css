@@ -320,3 +320,13 @@ background: #FFF;
 .fc .fc-daygrid-day-number {
 font-weight: 500;
 }
+
+.SumoSelect>.optWrapper.multiple>.MultiControls>p.btnOk{
+    background: #9F212C !important;
+    color: #fff;
+}
+
+.SumoSelect>.optWrapper.multiple>.MultiControls>p.btnCancel{
+  background: #9F212C !important;
+  color: #fff;
+}

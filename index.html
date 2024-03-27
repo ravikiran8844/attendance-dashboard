@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="assets/css/fullcalendar.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/custom.css" />
+    <link href="assets/css/sumoselect.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.css" />
 
   </head>
@@ -313,8 +314,12 @@
                   </div>
 
                   <div>
-                    <select name="" id="">
-                      <option value="">Anna Nagar</option>
+                    <select name="" id="showroom-select" multiple>
+                      <option selected value="">Anna Nagar</option>
+                      <option value="">Coimbatore</option>
+                      <option value="">Hosur</option>
+                      <option value="">Madurai</option>
+                      <option value="">Trichi</option>
                     </select>
                   </div>
 
@@ -1151,7 +1156,9 @@
     <script src="assets/js/polyfill.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="assets/js/jquery.sumoselect.min.js"></script>
     <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
+    
     
 
     <script>
@@ -1159,6 +1166,18 @@
     $('#team-members-table').DataTable();
 } );
     </script>
+
+
+<script>
+  $('#showroom-select').SumoSelect(
+    {
+    search: true, 
+    searchText: 'Search',
+    okCancelInMulti: true ,
+    // closeAfterClearAll: true, clearAll: true
+    
+  });
+</script>
 
   </body>
 </html>
