@@ -306,3 +306,17 @@ flex-shrink: 0;
 border: 1px solid #DDE4F3;
 background: #FFF;
 }
+
+/* .header .header-right button {
+  border: none;
+} */
+
+.fc-day-sun a { color:#FF2B00 !important; }
+.fc-day-sat a { color:#FF2B00 !important; }
+
+.fc-col-header-cell.fc-day-sun a, .fc-col-header-cell.fc-day-sat a{
+  color: #323232 !important;
+}
+.fc .fc-daygrid-day-number {
+font-weight: 500;
+}

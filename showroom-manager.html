@@ -171,9 +171,19 @@ document.addEventListener('DOMContentLoaded', function() {
         textColor:'#FF2B00'
 
       }
-    ]
+    ],
+    eventDidMount: function(info) {
+      console.log(info);
+      var weekday = moment(info.event.start).weekday(); // 0 for Sunday, 1 for Monday, ..., 6 for Saturday
+      console.log(weekday)
+      if (weekday === 0 || weekday === 6) { // Sunday or Saturday
+        info.el.style.color = 'red'; // Color weekend dates differently
+        console.log(info.el)
+      }
+    }
   });
 
+  
   calendar.render();
 
   function updateEvent(event) {
