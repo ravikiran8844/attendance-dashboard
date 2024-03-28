@@ -375,4 +375,22 @@ font-weight: 500;
   line-height: 1;
   font-size: 19px;
   }
-
+.calendar_wrapper{
+  position: relative;
+}
+.fc .fc-toolbar{
+    width: calc(100% - 230px);
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    justify-content: flex-end;
+    gap: 10px;
+}
+.calendar_wrapper .input-group{
+  position: absolute;
+  top: 15px;
+  z-index: 1;
+  left: 15px;
+}
+ 
