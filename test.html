@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Showroom Manager</title>
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="assets/css/lineicons.css" />
+		<link rel="stylesheet" href="assets/css/font-awesome.css">
+        <link rel="stylesheet" href="assets/css/custom.css" />
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+		
+		
+	</head>
+	<style>
+		.ui-pnotify-icon, .ui-pnotify-icon span {
+		padding-top: 3px;
+		}
+		
+		table {
+		border-collapse: collapse;
+		}
+		td, th {
+		border: none; /* Reset borders for all cells */
+		}
+		/* Apply border to the bottom side of each cell */
+		td {
+		border-left: 1px solid #DDE4F3;
+		}
+		
+		.card {
+		border-radius: 5px;
+		border: 1px solid #E4E4E7;
+		box-shadow: 0px 16px 25px rgba(0, 0, 0, 0.05);
+		}
+		
+		.card-footer {
+		justify-content: flex-end;
+		}
+		
+		.calico i {
+		background: #F2F2F2;
+		color:#666666;
+		padding: 9px;
+		border-radius: 50px;
+		margin-right: 2px;
+		}
+		
+		#calendar {
+        background: transparent;
+        }
+		
+		.fc-button-group button {
+		border-radius: 50px !important;
+		margin: 5px !important;
+		width: 35px;
+		height: 35px;
+		line-height: 1;
+		font-size: 19px;
+		}
+		
+		a.btn.btn {
+		background: linear-gradient(78deg, #9F212C 5.52%, #C4843E 105.18%);
+		}
+		
+		.fc-view-harness.fc-view-harness-active {
+		background: #fff;
+		border-radius: 5px;
+		border: 1px solid #E4E4E7;
+		box-shadow: 0px 16px 25px rgba(0, 0, 0, 0.05);
+		}
+
+        a.fc-event.fc-event-draggable.fc-event-resizable.fc-event-start.fc-event-end.fc-event-past.fc-daygrid-event.fc-daygrid-block-event.fc-h-event {
+           border-radius: 15px;
+           text-align: center;
+           font-weight: 500;
+        }
+
+        .fc-button.fc-today-button{
+            background: linear-gradient(78deg, #9F212C 5.52%, #C4843E 105.18%) !important;
+            padding: 5px 20px !important;
+            font-weight: 500;
+         }
+        .fc-button.fc-prev-button, .fc-button.fc-next-button{
+            background: linear-gradient(to bottom right, #9F212C, #EEB64F) !important;
+            padding: 0px;
+        }
+        .fc .fc-button .fc-icon {
+            font-size: 1.8em !important;
+        }
+	</style>
+    <body>
+		
+        <main class="showroom-manager-page">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-4">
+						<div class="p-5 showroom-manager-page_store-name_warpper text-center">
+                            <div>
+                                <a href="showroom-manager.html">
+                                    <img width="190" height="40" class="img-fluid" src="assets/images/logo/jewelone-logo-light.svg" alt="logo">
+								</a>
+							</div>
+                            <h1 class="text-white mt-4 showroom-manager-page_store-name">Anna Nagar</h1>
+						</div>
+						
+
+						
+                        <div class="mt-5">
+                            <h5 class="text-main mb-3">Entry details</h5>						
+                            <div class="card showroom-manager-page_card">
+                                <div class="card-body">
+                                    <table class="table table-borderless">
+                                        <tr>
+                                            <th>1</th>
+                                            <td class="border-start border-1">01/04/2024 - 1st April
+											Updated</td>
+										</tr>
+                                        <tr>
+                                            <th >2</th>
+                                            <td class="border-start border-1">03/04/2024 - 1st April
+											Updated</td>
+										</tr>
+                                        <tr>
+                                            <th>3</th>
+                                            <td class="border-start border-1">03/04/2024 - 1st April
+											Updated</td>
+										</tr>
+                                        <tr>
+                                            <th>4</th>
+                                            <td class="border-start border-1">04/04/2024 - 1st April
+											Updated</td>
+										</tr>
+                                        <tr>
+                                            <th>5</th>
+                                            <td class="border-start border-1">05/04/2024 - 1st April
+											Updated</td>
+										</tr>
+									</table>
+								</div>
+								<div class="card-footer d-flex">
+									<a class="btn btn text-white" href="logout.php"> <i class="lni lni-exit"></i> Sign Out</a>
+								</div>
+							</div>
+						</div>
+					</div>
+                    <div class="col-12 col-lg-8">
+                        <div class="pt-5 ps-lg-5">
+							<div class="input-group d-flex align-items-center custom-date-input">
+								<div class="input-group-prepend">
+									<label class="calico" for="dateInput">
+										<i class="fa fa-calendar" aria-hidden="true"></i>
+									</label>
+								</div>
+								<input type="text" id="dateInput">
+							</div>
+                            <div id='calendar'></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+        <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
+        <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/bootstrap5@6.1.11/index.global.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+		
+		<script>
+			
+			document.addEventListener('DOMContentLoaded', function() {
+				var calendarEl = document.getElementById('calendar');
+				
+				var currentDate = moment().format('YYYY-MM');
+				var currentMonth = moment().format('MM');
+				var currentMonthName = moment().format('MMMM');
+				
+				var currentYear = moment().format('YYYY');
+				$('#dateInput').attr('placeholder', `${currentMonthName} ${currentYear}`); // Set the placeholder value
+				
+				
+				var daysInMonth = moment(currentDate, 'YYYY-MM').daysInMonth();
+				
+				
+				var calendar = new FullCalendar.Calendar(calendarEl, {
+					initialView: 'dayGridMonth',
+					editable: true,
+					eventDrop: function(info) {
+						updateEvent(info.event);
+					},
+					eventClick: function(info) {
+						var newText = prompt("Enter new event text:");
+						if (newText !== null) {
+							info.event.setProp('title', newText);
+							updateEvent(info.event);
+						}
+					},
+					events: [
+					{ 
+						title: 'Update', 
+						start: '2024-03-01',
+						color: '#FBF0CA',
+						textColor:'#F0A437'
+					},
+					{ 
+						title: 'Update', 
+						start: '2024-03-02',
+						color: '#FBF0CA',
+						textColor:'#F0A437'
+					},
+					{ 
+						title: 'Update', 
+						start: '2024-03-03',
+						color: '#FBF0CA',
+						textColor:'#F0A437'
+					},
+					{ 
+						title: 'Update', 
+						start: '2024-03-04',
+						color: '#FBF0CA',
+						textColor:'#F0A437'
+					},
+					{ 
+						title: 'Updated', 
+						start: '2024-03-10',
+						color: '#E7F6ED',
+						textColor:'#0CA750'
+						
+					},
+					{ 
+						title: 'Late Updated', 
+						start: '2024-03-20',
+						color: '#FEEAE5',
+						textColor:'#FF2B00'
+						
+					},
+					{ 
+						title: 'Late Updated', 
+						start: '2024-03-15',
+						color: '#FEEAE5',
+						textColor:'#FF2B00'
+						
+					}
+					],
+					eventDidMount: function(info) {
+						console.log(info);
+						var weekday = moment(info.event.start).weekday(); // 0 for Sunday, 1 for Monday, ..., 6 for Saturday
+						console.log(weekday)
+						if (weekday === 0 || weekday === 6) { // Sunday or Saturday
+							info.el.style.color = 'red'; // Color weekend dates differently
+							console.log(info.el)
+						}
+					}
+				});
+				
+				
+				calendar.render();
+				
+				function updateEvent(event) {
+					var title = event.title;
+					var color= '#FBF0CA';
+					var textColor='#F0A437';
+					if (title === 'Updated') {
+						color= '#E7F6ED';
+						textColor='#0CA750';
+						} else if (title === 'Late Updated') {
+						color= '#FEEAE5';
+						textColor='#FF2B00';
+					}
+					event.setProp('color', color);
+					event.setProp('textColor', textColor);
+				}
+				
+				// Initialize datepicker
+				$("#dateInput").datepicker({
+					dateFormat: "yy-mm-dd",
+					onSelect: function(dateText) {
+						calendar.gotoDate(dateText);
+					}
+				});
+				
+				// Event listener for month and year change
+				// $('#go-button').click(function() {
+				//   var selectedDate = $('#dateInput').val();
+				//   calendar.gotoDate(selectedDate);
+				// });
+				
+			});
+			
+		</script>
+	</body>
+</html>
