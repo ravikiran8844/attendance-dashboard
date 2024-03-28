@@ -394,3 +394,8 @@ font-weight: 500;
   left: 15px;
 }
  
+
+
+.fc-daygrid-day-top {
+  direction: rtl;
+  }
