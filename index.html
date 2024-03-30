@@ -30,13 +30,49 @@
     <aside class="sidebar-nav-wrapper">
       <nav class="sidebar-nav">
         <ul>
-          <li class="nav-item active">
-            <a href="index.html">
+          <li class="nav-item active nav-item-has-children">
+            <a  class="collapsed" data-bs-toggle="collapse"
+            data-bs-target="#ddmenu_1"
+            aria-controls="ddmenu_1"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
               <span class="icon">
                 <svg width="20" height="20"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>home</title><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" /></svg>
               </span>
               <span class="text">Dashboard</span>
             </a>
+            <ul id="ddmenu_1" class="collapse dropdown-nav">
+              <li>
+                <a href="index.html"> Link 1 </a>
+              </li>
+              <li>
+                <a href="index.html"> Link 2 </a>
+              </li>
+            </ul>
+          </li>
+
+
+          <li class="nav-item nav-item-has-children">
+            <a  class="collapsed"
+            data-bs-toggle="collapse"
+            data-bs-target="#ddmenu_2"
+            aria-controls="ddmenu_2"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            >
+              <span class="icon">
+                <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>view-dashboard-outline</title><path d="M19,5V7H15V5H19M9,5V11H5V5H9M19,13V19H15V13H19M9,17V19H5V17H9M21,3H13V9H21V3M11,3H3V13H11V3M21,11H13V21H21V11M11,15H3V21H11V15Z" /></svg>
+              </span>
+              <span class="text">Links</span>
+            </a>
+            <ul id="ddmenu_2" class="collapse dropdown-nav">
+              <li>
+                <a href="index.html"> Link 1 </a>
+              </li>
+              <li>
+                <a href="index.html"> Link 2 </a>
+              </li>
+            </ul>
           </li>
 
 
@@ -46,6 +82,7 @@
 
 
         
+
 
 
           <li class="nav-item ">
@@ -75,6 +112,9 @@
               <span class="text">Master</span>
             </a>
           </li>
+
+
+       
 
           
         </ul>

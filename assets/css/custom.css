@@ -399,3 +399,60 @@ font-weight: 500;
 .fc-daygrid-day-top {
   direction: rtl;
   }
+
+  a.fc-event.fc-event-draggable.fc-event-resizable.fc-event-start.fc-event-end.fc-event-past.fc-daygrid-event.fc-daygrid-block-event.fc-h-event {
+    border-radius: 15px;
+    text-align: center;
+    font-weight: 500;
+ }
+
+
+
+
+
+ ::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(200,200,200,1);
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #A8A3A3;
+  -webkit-box-shadow: inset 0 0 6px rgba(90,90,90,0.7);
+}
+
+
+.enter-attendance-table{
+  margin-top: 10px;
+}
+.enter-attendance-table input[type="checkbox"]{
+  border-radius: 1.924px;
+border: 0.962px solid #A9A9A9;
+background: #F8F9FB;
+height: 18px;
+width: 18px;
+accent-color: #9F212C;
+
+}
+
+.sidebar-nav-wrapper .sidebar-nav ul .nav-item a{
+  color: #fff;
+}
+.sidebar-nav-wrapper .sidebar-nav ul .nav-item a:hover{
+  color: #F0A437 !important;
+}
+
+.sidebar-nav-wrapper .nav-item-has-children.active li a{
+  color: #9F212C !important;
+  font-weight: 500;
+  opacity: 1;
+}
+
+.sidebar-nav-wrapper .nav-item-has-children.active li a:hover{
+  color: #9F212C !important;
+}
+
