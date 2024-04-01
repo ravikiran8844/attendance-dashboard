@@ -685,6 +685,30 @@
 				var calendar = new FullCalendar.Calendar(calendarEl, {
 					initialView: 'dayGridMonth',
 					editable: true,
+					eventSources: [
+      function(fetchInfo, successCallback, failureCallback) {
+        var start = moment(fetchInfo.start);
+        var end = moment(fetchInfo.end);
+
+        var events = [];
+
+        // Generate events for each day in the current visible range
+        while (start < end) {
+          events.push({
+            title: 'Update', 
+            start: start.format('YYYY-MM-DD'),
+            color: '#FBF0CA',
+            textColor: '#F0A437'
+          });
+          start.add(1, 'day');
+        }
+
+        successCallback(events);
+      }
+    ],
+        eventDrop: function (info) {
+          updateEvent(info.event);
+        },
 					eventDrop: function(info) {
 						updateEvent(info.event);
 					},
@@ -701,53 +725,53 @@
 						<!-- updateEvent(info.event); -->
 						<!-- } -->
 					},
-					events: [
-					{ 
-						title: 'Update', 
-						start: '2024-03-01',
-						color: '#FBF0CA',
-						textColor:'#F0A437'
-					},
-					{ 
-						title: 'Update', 
-						start: '2024-03-02',
-						color: '#FBF0CA',
-						textColor:'#F0A437'
-					},
-					{ 
-						title: 'Update', 
-						start: '2024-03-03',
-						color: '#FBF0CA',
-						textColor:'#F0A437'
-					},
-					{ 
-						title: 'Update', 
-						start: '2024-03-04',
-						color: '#FBF0CA',
-						textColor:'#F0A437'
-					},
-					{ 
-						title: 'Updated', 
-						start: '2024-03-10',
-						color: '#E7F6ED',
-						textColor:'#0CA750'
+					// events: [
+					// { 
+					// 	title: 'Update', 
+					// 	start: '2024-03-01',
+					// 	color: '#FBF0CA',
+					// 	textColor:'#F0A437'
+					// },
+					// { 
+					// 	title: 'Update', 
+					// 	start: '2024-03-02',
+					// 	color: '#FBF0CA',
+					// 	textColor:'#F0A437'
+					// },
+					// { 
+					// 	title: 'Update', 
+					// 	start: '2024-03-03',
+					// 	color: '#FBF0CA',
+					// 	textColor:'#F0A437'
+					// },
+					// { 
+					// 	title: 'Update', 
+					// 	start: '2024-03-04',
+					// 	color: '#FBF0CA',
+					// 	textColor:'#F0A437'
+					// },
+					// { 
+					// 	title: 'Updated', 
+					// 	start: '2024-03-10',
+					// 	color: '#E7F6ED',
+					// 	textColor:'#0CA750'
 						
-					},
-					{ 
-						title: 'Late Updated', 
-						start: '2024-03-20',
-						color: '#FEEAE5',
-						textColor:'#FF2B00'
+					// },
+					// { 
+					// 	title: 'Late Updated', 
+					// 	start: '2024-03-20',
+					// 	color: '#FEEAE5',
+					// 	textColor:'#FF2B00'
 						
-					},
-					{ 
-						title: 'Late Updated', 
-						start: '2024-03-15',
-						color: '#FEEAE5',
-						textColor:'#FF2B00'
+					// },
+					// { 
+					// 	title: 'Late Updated', 
+					// 	start: '2024-03-15',
+					// 	color: '#FEEAE5',
+					// 	textColor:'#FF2B00'
 						
-					}
-					],
+					// }
+					// ],
 					eventDidMount: function(info) {
 						console.log(info);
 						var weekday = moment(info.event.start).weekday(); // 0 for Sunday, 1 for Monday, ..., 6 for Saturday
