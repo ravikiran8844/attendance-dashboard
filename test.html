@@ -693,12 +693,22 @@
         var events = [];
 
         // Generate events for each day in the current visible range
-        while (start < end) {
+		while (start < end) {
+            var eventDate = start.format('YYYY-MM-DD');
+            var textColor = '#F0A437'; // default text color
+            let color='#FBF0CA'
+   
+         // Check if event date is after today
+         if (moment(eventDate).isAfter(moment(), 'day')) {
+                textColor = '#f7d19b'; // change text color for future events
+                color='#FEFBEF';
+            }
+
           events.push({
             title: 'Update', 
             start: start.format('YYYY-MM-DD'),
-            color: '#FBF0CA',
-            textColor: '#F0A437'
+            color: color,
+            textColor: textColor
           });
           start.add(1, 'day');
         }
