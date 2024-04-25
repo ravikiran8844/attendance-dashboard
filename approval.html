@@ -437,13 +437,13 @@
         });
     </script>
 
-<script>
-    let tableBody = document.querySelector('#team-members-table tbody')
-    for (i = 0; i <= 50; i++) {
-        console.log("i", i)
+    <script>
+        let tableBody = document.querySelector('#team-members-table tbody')
+        for (i = 0; i <= 50; i++) {
+            console.log("i", i)
 
-        let item = document.createElement("tr")
-        item.innerHTML = `<tr>
+            let item = document.createElement("tr")
+            item.innerHTML = `<tr>
                                 <td>01/03/2024</td>
                                 <td>Anna Nagar</td>
                                 <td>
@@ -459,53 +459,53 @@
                                     </div>
                                 </td>
                             </tr>`
-        tableBody.appendChild(item)
+            tableBody.appendChild(item)
 
 
 
-    }
-</script>
+        }
+    </script>
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-let headerYes = document.getElementById('headerYes');
-let headerNo = document.getElementById('headerNo');
-let bodyRadios = document.querySelectorAll('#team-members-table tbody input[type="radio"]');
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let headerYes = document.getElementById('headerYes');
+            let headerNo = document.getElementById('headerNo');
+            let bodyRadios = document.querySelectorAll('#team-members-table tbody input[type="radio"]');
 
-// Function to sync all radio buttons in the tbody to 'Yes'
-function syncToYes() {
-bodyRadios.forEach(radio => {
-if (radio.value === 'Yes') {
-    radio.checked = true;
-}
-});
-}
+            // Function to sync all radio buttons in the tbody to 'Yes'
+            function syncToYes() {
+                bodyRadios.forEach(radio => {
+                    if (radio.value === 'Yes') {
+                        radio.checked = true;
+                    }
+                });
+            }
 
-// Function to sync all radio buttons in the tbody to 'No'
-function syncToNo() {
-bodyRadios.forEach(radio => {
-if (radio.value === 'No') {
-    radio.checked = true;
-}
-});
-}
+            // Function to sync all radio buttons in the tbody to 'No'
+            function syncToNo() {
+                bodyRadios.forEach(radio => {
+                    if (radio.value === 'No') {
+                        radio.checked = true;
+                    }
+                });
+            }
 
-// Event listener for 'Yes' radio button in the header
-headerYes.addEventListener('change', function () {
-if (this.checked) {
-syncToYes();
-}
-});
+            // Event listener for 'Yes' radio button in the header
+            headerYes.addEventListener('change', function () {
+                if (this.checked) {
+                    syncToYes();
+                }
+            });
 
-// Event listener for 'No' radio button in the header
-headerNo.addEventListener('change', function () {
-if (this.checked) {
-syncToNo();
-}
-});
-});
+            // Event listener for 'No' radio button in the header
+            headerNo.addEventListener('change', function () {
+                if (this.checked) {
+                    syncToNo();
+                }
+            });
+        });
 
-</script>
+    </script>
 
 </body>
 
