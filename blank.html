@@ -1,376 +1,789 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon" />
-    <title> Blank Page | Attendance Dashboard</title>
 
-    <!-- ========== All CSS files linkup ========= -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/lineicons.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="assets/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="assets/css/fullcalendar.css" />
-    <link rel="stylesheet" href="assets/css/fullcalendar.css" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/custom.css" />
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon" />
+  <title> Blank Page | Attendance Dashboard</title>
 
-  </head>
-  <body>
-    <!-- ======== Preloader =========== -->
-    <div id="preloader">
-      <div class="spinner"></div>
-    </div>
-    <!-- ======== Preloader =========== -->
+  <!-- ========== All CSS files linkup ========= -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/lineicons.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="assets/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="assets/css/fullcalendar.css" />
+  <link rel="stylesheet" href="assets/css/fullcalendar.css" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/custom.css" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.css" />
 
-    <!-- ======== sidebar-nav start =========== -->
-    <aside class="sidebar-nav-wrapper">
-      <nav class="sidebar-nav">
-        <ul>
-          <li class="nav-item">
-            <a href="index.html">
-              <span class="icon">
-                <svg width="20" height="20"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>home</title><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" /></svg>
-              </span>
-              <span class="text">Dashboard</span>
-            </a>
-          </li>
+</head>
 
+<body>
+  <!-- ======== Preloader =========== -->
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+  <!-- ======== Preloader =========== -->
 
-          <li class="nav-item ">
-              <span class="text ms-2 sidebar-link-text">Analytics</span>
-          </li>
-
-
-        
+  <!-- ======== sidebar-nav start =========== -->
+  <aside class="sidebar-nav-wrapper">
+    <nav class="sidebar-nav">
+      <ul>
+        <li class="nav-item">
+          <a href="index.html">
+            <span class="icon">
+              <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <title>home</title>
+                <path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" />
+              </svg>
+            </span>
+            <span class="text">Dashboard</span>
+          </a>
+        </li>
 
 
-          <li class="nav-item active">
-            <a href="employee-wise.html">
-              <span class="icon">
-                <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>account</title><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" /></svg>
-              </span>
-              <span class="text">Employee Wise</span>
-            </a>
-          </li>
-
-          <li class="nav-item ">
-            <a href="approval.html">
-              <span class="icon">
-                <svg width="20" height="20"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>cursor-default-click-outline</title><path d="M11.5,11L17.88,16.37L17,16.55L16.36,16.67C15.73,16.8 15.37,17.5 15.65,18.07L15.92,18.65L17.28,21.59L15.86,22.25L14.5,19.32L14.24,18.74C13.97,18.15 13.22,17.97 12.72,18.38L12.21,18.78L11.5,19.35V11M10.76,8.69A0.76,0.76 0 0,0 10,9.45V20.9C10,21.32 10.34,21.66 10.76,21.66C10.95,21.66 11.11,21.6 11.24,21.5L13.15,19.95L14.81,23.57C14.94,23.84 15.21,24 15.5,24C15.61,24 15.72,24 15.83,23.92L18.59,22.64C18.97,22.46 19.15,22 18.95,21.63L17.28,18L19.69,17.55C19.85,17.5 20,17.43 20.12,17.29C20.39,16.97 20.35,16.5 20,16.21L11.26,8.86L11.25,8.87C11.12,8.76 10.95,8.69 10.76,8.69M15,10V8H20V10H15M13.83,4.76L16.66,1.93L18.07,3.34L15.24,6.17L13.83,4.76M10,0H12V5H10V0M3.93,14.66L6.76,11.83L8.17,13.24L5.34,16.07L3.93,14.66M3.93,3.34L5.34,1.93L8.17,4.76L6.76,6.17L3.93,3.34M7,10H2V8H7V10" /></svg>
-              </span>
-              <span class="text">Approval</span>
-            </a>
-          </li>
-          
-
-          <li class="nav-item ">
-            <a href="master.html">
-              <span class="icon">
-                <svg width="20" height="20"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>cursor-default-click-outline</title><path d="M11.5,11L17.88,16.37L17,16.55L16.36,16.67C15.73,16.8 15.37,17.5 15.65,18.07L15.92,18.65L17.28,21.59L15.86,22.25L14.5,19.32L14.24,18.74C13.97,18.15 13.22,17.97 12.72,18.38L12.21,18.78L11.5,19.35V11M10.76,8.69A0.76,0.76 0 0,0 10,9.45V20.9C10,21.32 10.34,21.66 10.76,21.66C10.95,21.66 11.11,21.6 11.24,21.5L13.15,19.95L14.81,23.57C14.94,23.84 15.21,24 15.5,24C15.61,24 15.72,24 15.83,23.92L18.59,22.64C18.97,22.46 19.15,22 18.95,21.63L17.28,18L19.69,17.55C19.85,17.5 20,17.43 20.12,17.29C20.39,16.97 20.35,16.5 20,16.21L11.26,8.86L11.25,8.87C11.12,8.76 10.95,8.69 10.76,8.69M15,10V8H20V10H15M13.83,4.76L16.66,1.93L18.07,3.34L15.24,6.17L13.83,4.76M10,0H12V5H10V0M3.93,14.66L6.76,11.83L8.17,13.24L5.34,16.07L3.93,14.66M3.93,3.34L5.34,1.93L8.17,4.76L6.76,6.17L3.93,3.34M7,10H2V8H7V10" /></svg>
-              </span>
-              <span class="text">Master</span>
-            </a>
-          </li>
-
-          
-        </ul>
+        <li class="nav-item ">
+          <span class="text ms-2 sidebar-link-text">Analytics</span>
+        </li>
 
 
-        <ul>
-          <li class="nav-item">
-            <a href="#">
-              <span class="icon">
-                <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>logout</title><path d="M17 8L15.6 9.4L17.2 11H9V13H17.2L15.6 14.6L17 16L21 12L17 8M5 5H12V3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H12V19H5V5Z" /></svg>
-              </span>
-              <span class="text">Logout</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-     
-    </aside>
 
-     <!-- ========== header start ========== -->
-     <header class="header">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-5 col-md-5 col-6">
-            <div class="header-left d-flex gap-4 align-items-center">
-              <div class="navbar-logo">
-                <a href="index.html">
-                  <img width="190" height="40" src="assets/images/logo/jewelone-logo.svg" alt="logo" />
-                </a>
-              </div>
-              <div class="menu-toggle-btn mr-15">
-                <button id="menu-toggle" class="main-btn primary-btn btn-hover">
-                  <i class="lni lni-chevron-left"></i>                   </button>
-              </div>
-              <div class="header-search d-none d-lg-flex">
-                <form action="#">
-                  <input type="text" placeholder="Type to search" />
-                  <button><i class="lni lni-search-alt"></i></button>
-                </form>
-              </div>
+
+
+        <li class="nav-item active">
+          <a href="employee-wise.html">
+            <span class="icon">
+              <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <title>account</title>
+                <path
+                  d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" />
+              </svg>
+            </span>
+            <span class="text">Employee Wise</span>
+          </a>
+        </li>
+
+        <li class="nav-item ">
+          <a href="approval.html">
+            <span class="icon">
+              <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <title>cursor-default-click-outline</title>
+                <path
+                  d="M11.5,11L17.88,16.37L17,16.55L16.36,16.67C15.73,16.8 15.37,17.5 15.65,18.07L15.92,18.65L17.28,21.59L15.86,22.25L14.5,19.32L14.24,18.74C13.97,18.15 13.22,17.97 12.72,18.38L12.21,18.78L11.5,19.35V11M10.76,8.69A0.76,0.76 0 0,0 10,9.45V20.9C10,21.32 10.34,21.66 10.76,21.66C10.95,21.66 11.11,21.6 11.24,21.5L13.15,19.95L14.81,23.57C14.94,23.84 15.21,24 15.5,24C15.61,24 15.72,24 15.83,23.92L18.59,22.64C18.97,22.46 19.15,22 18.95,21.63L17.28,18L19.69,17.55C19.85,17.5 20,17.43 20.12,17.29C20.39,16.97 20.35,16.5 20,16.21L11.26,8.86L11.25,8.87C11.12,8.76 10.95,8.69 10.76,8.69M15,10V8H20V10H15M13.83,4.76L16.66,1.93L18.07,3.34L15.24,6.17L13.83,4.76M10,0H12V5H10V0M3.93,14.66L6.76,11.83L8.17,13.24L5.34,16.07L3.93,14.66M3.93,3.34L5.34,1.93L8.17,4.76L6.76,6.17L3.93,3.34M7,10H2V8H7V10" />
+              </svg>
+            </span>
+            <span class="text">Approval</span>
+          </a>
+        </li>
+
+
+        <li class="nav-item ">
+          <a href="master.html">
+            <span class="icon">
+              <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <title>cursor-default-click-outline</title>
+                <path
+                  d="M11.5,11L17.88,16.37L17,16.55L16.36,16.67C15.73,16.8 15.37,17.5 15.65,18.07L15.92,18.65L17.28,21.59L15.86,22.25L14.5,19.32L14.24,18.74C13.97,18.15 13.22,17.97 12.72,18.38L12.21,18.78L11.5,19.35V11M10.76,8.69A0.76,0.76 0 0,0 10,9.45V20.9C10,21.32 10.34,21.66 10.76,21.66C10.95,21.66 11.11,21.6 11.24,21.5L13.15,19.95L14.81,23.57C14.94,23.84 15.21,24 15.5,24C15.61,24 15.72,24 15.83,23.92L18.59,22.64C18.97,22.46 19.15,22 18.95,21.63L17.28,18L19.69,17.55C19.85,17.5 20,17.43 20.12,17.29C20.39,16.97 20.35,16.5 20,16.21L11.26,8.86L11.25,8.87C11.12,8.76 10.95,8.69 10.76,8.69M15,10V8H20V10H15M13.83,4.76L16.66,1.93L18.07,3.34L15.24,6.17L13.83,4.76M10,0H12V5H10V0M3.93,14.66L6.76,11.83L8.17,13.24L5.34,16.07L3.93,14.66M3.93,3.34L5.34,1.93L8.17,4.76L6.76,6.17L3.93,3.34M7,10H2V8H7V10" />
+              </svg>
+            </span>
+            <span class="text">Master</span>
+          </a>
+        </li>
+
+
+      </ul>
+
+
+      <ul>
+        <li class="nav-item">
+          <a href="#">
+            <span class="icon">
+              <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <title>logout</title>
+                <path
+                  d="M17 8L15.6 9.4L17.2 11H9V13H17.2L15.6 14.6L17 16L21 12L17 8M5 5H12V3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H12V19H5V5Z" />
+              </svg>
+            </span>
+            <span class="text">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+  </aside>
+
+  <!-- ========== header start ========== -->
+  <header class="header">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-5 col-md-5 col-6">
+          <div class="header-left d-flex gap-4 align-items-center">
+            <div class="navbar-logo">
+              <a href="index.html">
+                <img width="190" height="40" src="assets/images/logo/jewelone-logo.svg" alt="logo" />
+              </a>
+            </div>
+            <div class="menu-toggle-btn mr-15">
+              <button id="menu-toggle" class="main-btn primary-btn btn-hover">
+                <i class="lni lni-chevron-left"></i> </button>
+            </div>
+            <div class="header-search d-none d-lg-flex">
+              <form action="#">
+                <input type="text" placeholder="Type to search" />
+                <button><i class="lni lni-search-alt"></i></button>
+              </form>
             </div>
           </div>
-          <div class="col-lg-7 col-md-7 col-6">
-            <div class="header-right">
-              <!-- message start -->
-              <div class="header-message-box ml-15 mr-15 d-none d-md-flex">
-                <button class="dropdown-toggle" type="button" id="message" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  <svg width="22" height="22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>email-outline</title><path d="M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6M20 6L12 11L4 6H20M20 18H4V8L12 13L20 8V18Z" /></svg>
-                  
-                  <span>3</span>
-                </button>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="message">
-                  <li>
-                    <a href="#0">
-                      <div class="image">
-                        <img src="assets/images/lead/lead-5.png" alt="" />
-                      </div>
-                      <div class="content">
-                        <h6>Jacob Jones</h6>
-                        <p>Hey!I can across your profile and ...</p>
-                        <span>10 mins ago</span>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#0">
-                      <div class="image">
-                        <img src="assets/images/lead/lead-3.png" alt="" />
-                      </div>
-                      <div class="content">
-                        <h6>John Doe</h6>
-                        <p>Would you mind please checking out</p>
-                        <span>12 mins ago</span>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#0">
-                      <div class="image">
-                        <img src="assets/images/lead/lead-2.png" alt="" />
-                      </div>
-                      <div class="content">
-                        <h6>Anee Lee</h6>
-                        <p>Hey! are you available for freelance?</p>
-                        <span>1h ago</span>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <!-- message end -->
+        </div>
+        <div class="col-lg-7 col-md-7 col-6">
+          <div class="header-right">
+            <!-- message start -->
+            <div class="header-message-box ml-15 mr-15 d-none d-md-flex">
+              <button class="dropdown-toggle" type="button" id="message" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <svg width="22" height="22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <title>email-outline</title>
+                  <path
+                    d="M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6M20 6L12 11L4 6H20M20 18H4V8L12 13L20 8V18Z" />
+                </svg>
+
+                <span>3</span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="message">
+                <li>
+                  <a href="#0">
+                    <div class="image">
+                      <img src="assets/images/lead/lead-5.png" alt="" />
+                    </div>
+                    <div class="content">
+                      <h6>Jacob Jones</h6>
+                      <p>Hey!I can across your profile and ...</p>
+                      <span>10 mins ago</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#0">
+                    <div class="image">
+                      <img src="assets/images/lead/lead-3.png" alt="" />
+                    </div>
+                    <div class="content">
+                      <h6>John Doe</h6>
+                      <p>Would you mind please checking out</p>
+                      <span>12 mins ago</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#0">
+                    <div class="image">
+                      <img src="assets/images/lead/lead-2.png" alt="" />
+                    </div>
+                    <div class="content">
+                      <h6>Anee Lee</h6>
+                      <p>Hey! are you available for freelance?</p>
+                      <span>1h ago</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- message end -->
 
 
 
-              <!-- notification start -->
-              <div class="notification-box d-none d-md-flex">
-                <button class="dropdown-toggle" type="button" id="notification" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  <svg width="22" height="22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>bell-outline</title><path d="M10 21H14C14 22.1 13.1 23 12 23S10 22.1 10 21M21 19V20H3V19L5 17V11C5 7.9 7 5.2 10 4.3V4C10 2.9 10.9 2 12 2S14 2.9 14 4V4.3C17 5.2 19 7.9 19 11V17L21 19M17 11C17 8.2 14.8 6 12 6S7 8.2 7 11V18H17V11Z" /></svg>
-                  <span>2</span>
-                </button>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notification">
-                  <li>
-                    <a href="#0">
-                      <div class="image">
-                        <img src="assets/images/lead/lead-6.png" alt="" />
-                      </div>
-                      <div class="content">
-                        <h6>
-                          John Doe
-                          <span class="text-regular">
-                            comment on a product.
-                          </span>
-                        </h6>
-                        <p>
-                          Lorem ipsum dolor sit amet, consect etur adipiscing
-                          elit Vivamus tortor.
-                        </p>
-                        <span>10 mins ago</span>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#0">
-                      <div class="image">
-                        <img src="assets/images/lead/lead-1.png" alt="" />
-                      </div>
-                      <div class="content">
-                        <h6>
-                          Jonathon
-                          <span class="text-regular">
-                            like on a product.
-                          </span>
-                        </h6>
-                        <p>
-                          Lorem ipsum dolor sit amet, consect etur adipiscing
-                          elit Vivamus tortor.
-                        </p>
-                        <span>10 mins ago</span>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <!-- notification end -->
+            <!-- notification start -->
+            <div class="notification-box d-none d-md-flex">
+              <button class="dropdown-toggle" type="button" id="notification" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <svg width="22" height="22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <title>bell-outline</title>
+                  <path
+                    d="M10 21H14C14 22.1 13.1 23 12 23S10 22.1 10 21M21 19V20H3V19L5 17V11C5 7.9 7 5.2 10 4.3V4C10 2.9 10.9 2 12 2S14 2.9 14 4V4.3C17 5.2 19 7.9 19 11V17L21 19M17 11C17 8.2 14.8 6 12 6S7 8.2 7 11V18H17V11Z" />
+                </svg>
+                <span>2</span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notification">
+                <li>
+                  <a href="#0">
+                    <div class="image">
+                      <img src="assets/images/lead/lead-6.png" alt="" />
+                    </div>
+                    <div class="content">
+                      <h6>
+                        John Doe
+                        <span class="text-regular">
+                          comment on a product.
+                        </span>
+                      </h6>
+                      <p>
+                        Lorem ipsum dolor sit amet, consect etur adipiscing
+                        elit Vivamus tortor.
+                      </p>
+                      <span>10 mins ago</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#0">
+                    <div class="image">
+                      <img src="assets/images/lead/lead-1.png" alt="" />
+                    </div>
+                    <div class="content">
+                      <h6>
+                        Jonathon
+                        <span class="text-regular">
+                          like on a product.
+                        </span>
+                      </h6>
+                      <p>
+                        Lorem ipsum dolor sit amet, consect etur adipiscing
+                        elit Vivamus tortor.
+                      </p>
+                      <span>10 mins ago</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- notification end -->
 
 
-              <!-- <div class="align-self-center ml-15 header-border d-none d-md-flex">
+            <!-- <div class="align-self-center ml-15 header-border d-none d-md-flex">
                 <div class="header_company-name">Company name <span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="6" height="10" viewBox="0 0 6 10" fill="none">
                     <path d="M5.64055 5.91202C5.75049 5.81567 5.8412 5.68135 5.90409 5.52177C5.96699 5.36218 6 5.1826 6 5C6 4.8174 5.96699 4.63782 5.90409 4.47823C5.8412 4.31865 5.75049 4.18433 5.64055 4.08798L1.16739 0.162835C1.05208 0.0615387 0.919721 0.00545975 0.78394 0.000379528C0.648159 -0.00469974 0.513875 0.0414037 0.39493 0.133937C0.275986 0.22647 0.176685 0.362085 0.107265 0.526802C0.0378447 0.691518 0.000817343 0.879375 -3.90299e-07 1.07101L-4.68151e-08 8.929C0.000817703 9.12063 0.0378451 9.30848 0.107265 9.4732C0.176685 9.63792 0.275986 9.77353 0.394931 9.86606C0.513875 9.9586 0.64816 10.0047 0.78394 9.99962C0.919721 9.99454 1.05208 9.93846 1.16739 9.83717L5.64055 5.91202Z" fill="#313131"/>
                   </svg>
                 </span></div>
               </div> -->
-              
-              <!-- profile start -->
-              <div class="profile-box ml-15">
-                <button class="dropdown-toggle bg-transparent border-0" type="button" id="profile"
-                  data-bs-toggle="dropdown" aria-expanded="false">
-                  <div class="profile-info">
-                    <div class="info">
-                      <div class="image">
-                        <img src="assets/images/profile/profile-image.png" alt="" />
-                      </div>
-                      <!-- <div>
+
+            <!-- profile start -->
+            <div class="profile-box ml-15">
+              <button class="dropdown-toggle bg-transparent border-0" type="button" id="profile"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="profile-info">
+                  <div class="info">
+                    <div class="image">
+                      <img src="assets/images/profile/profile-image.png" alt="" />
+                    </div>
+                    <!-- <div>
                         <h6 class="fw-semibold">Vishnu prasath</h6>
                         <p>Admin</p>
                       </div> -->
+                  </div>
+                </div>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profile">
+                <li>
+                  <div class="author-info flex items-center !p-1">
+                    <div class="image">
+                      <img src="assets/images/profile/profile-image.png" alt="image">
+                    </div>
+                    <div class="content">
+                      <h4 class="text-sm">Vishnu prasath</h4>
+                      <a class="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white text-xs"
+                        href="#">email@gmail.com</a>
                     </div>
                   </div>
-                </button>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profile">
-                  <li>
-                    <div class="author-info flex items-center !p-1">
-                      <div class="image">
-                        <img src="assets/images/profile/profile-image.png" alt="image">
-                      </div>
-                      <div class="content">
-                        <h4 class="text-sm">Vishnu prasath</h4>
-                        <a class="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white text-xs" href="#">email@gmail.com</a>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="divider"></li>
-                  <li>
-                    <a href="#0">
-                      <i class="lni lni-user"></i> View Profile
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#0">
-                      <i class="lni lni-alarm"></i> Notifications
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#0"> <i class="lni lni-inbox"></i> Messages </a>
-                  </li>
-                  <li>
-                    <a href="#0"> <i class="lni lni-cog"></i> Settings </a>
-                  </li>
-                  <li class="divider"></li>
-                  <li>
-                    <a href="#0"> <i class="lni lni-exit"></i> Sign Out </a>
-                  </li>
-                </ul>
-              </div>
-              <!-- profile end -->
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <a href="#0">
+                    <i class="lni lni-user"></i> View Profile
+                  </a>
+                </li>
+                <li>
+                  <a href="#0">
+                    <i class="lni lni-alarm"></i> Notifications
+                  </a>
+                </li>
+                <li>
+                  <a href="#0"> <i class="lni lni-inbox"></i> Messages </a>
+                </li>
+                <li>
+                  <a href="#0"> <i class="lni lni-cog"></i> Settings </a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <a href="#0"> <i class="lni lni-exit"></i> Sign Out </a>
+                </li>
+              </ul>
             </div>
+            <!-- profile end -->
           </div>
         </div>
       </div>
-    </header>
-    <!-- ========== header end ========== -->
+    </div>
+  </header>
+  <!-- ========== header end ========== -->
 
 
-    <div class="overlay"></div>
-    <!-- ======== sidebar-nav end =========== -->
+  <div class="overlay"></div>
+  <!-- ======== sidebar-nav end =========== -->
 
-    <!-- ======== main-wrapper start =========== -->
-    <main class="main-wrapper">
-     
-
-      <!-- ========== section start ========== -->
-      <section class="section">
-        <div class="container-fluid">
-
-        
+  <!-- ======== main-wrapper start =========== -->
+  <main class="main-wrapper">
 
 
-          <!-- ========== title-wrapper start ========== -->
-          <div class="title-wrapper pt-30">
-          
+    <!-- ========== section start ========== -->
+    <section class="section employee-onboarding">
+      <div class="container-fluid py-5">
 
-            <div class="row align-items-center">
-              <div class="col-12">
-                <div class="mb-2">
-                  <h4 class="text-main">title</h4>
+
+
+
+
+        <table class="table table-bordered" width="100%">
+
+          <tr class="">
+            <th></th>
+            <th>HR</th>
+            <th>Manager</th>
+            <th></th>
+          </tr>
+
+          <tbody>
+            <tr>
+              <td>
+                <div class="fw-semibold fs-6">Has Offer
+                  Letter Been Issued?</div>
+              </td>
+              <td>
+               <div class="d-flex gap-3">
+                <div>
+                  <div class="fw-semibold fs-6 mb-2 text-start">From
+                    HR</div>
+                  <div class="d-flex gap-4">
+                    <div class="d-flex align-items-center gap-2">
+                      <input checked type="checkbox" value="yes">
+                      <label for="fresher-yes">Yes</label>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                      <input type="checkbox" value="no">
+                      <label for="fresher-no">No</label>
+                    </div>
+                  </div>
                 </div>
+                <div>
+                  <div class="fw-semibold fs-6 mb-2">Issued
+                      Date</div>
+                  <div>
+                      <input type="date" class="form-control" name id>
+                  </div>
+                </div>
+               </div>
+              </td>
+              <td>
+
+                <div class="text-start d-flex gap-3">
+                  <div>
+                    <div class="fw-semibold fs-6 mb-2">Update
+                      From Manager</div>
+                    <div>
+                      <button class="btn received active  px-4 py-2 me-2">Received</button>
+                      <button class="btn not-received  px-4 py-2">Not
+                        Received</button>
+
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="fw-semibold fs-6 mb-2">Received
+                        Date</div>
+                    <div>
+                        <input type="date" class="form-control" name id>
+                    </div>
+                  </div>
+
+
+                </div>
+              </td>
+              <td>
+                <button class="btn submit-btn px-4 py-2">Submit</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="card">
+          <div class="card-body">
+            <div class="col-12">
+              <div class="row my-3">
+                <div class="col-4 text-start">
+                  <div class="fw-semibold fs-6">Has Offer
+                    Letter Been Issued?</div>
+
+                </div>
+                <div class="col-6 text-start">
+                  <div class="d-flex gap-4">
+                    <div>
+                      <div>
+                        <div class="fw-semibold fs-6 mb-2">From
+                          HR</div>
+                        <div class="d-flex gap-4">
+                          <div class="d-flex align-items-center gap-2">
+                            <input checked type="checkbox" value="yes">
+                            <label for="fresher-yes">Yes</label>
+                          </div>
+                          <div class="d-flex align-items-center gap-2">
+                            <input type="checkbox" value="no">
+                            <label for="fresher-no">No</label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="mt-4">
+                        <div class="fw-semibold fs-6 mb-2">Update
+                          From Manager</div>
+                        <div>
+                          <button class="btn received active  px-4 py-2 me-2">Received</button>
+                          <button class="btn not-received  px-4 py-2">Not
+                            Received</button>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div>
+                        <div class="fw-semibold fs-6 mb-2">Issued
+                          Date</div>
+                        <div>
+                          <input type="date" class="form-control" name id>
+                        </div>
+                      </div>
+
+                      <div class="mt-4">
+                        <div class="fw-semibold fs-6 mb-2">Received
+                          Date</div>
+                        <div>
+                          <input type="date" class="form-control" name id>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-2 text-start">
+                  <button class="btn submit-btn px-4 py-2">Submit</button>
+                </div>
+
               </div>
-             
-              <!-- end col -->
+              <hr>
+              <div class="row my-3">
+                <div class="col-4 text-start">
+                  <div class="fw-semibold fs-6">Has
+                    uniform been issued?</div>
+
+                </div>
+                <div class="col-6 text-start">
+                  <div class="d-flex gap-4">
+                    <div>
+                      <div>
+                        <div class="fw-semibold fs-6 mb-2">From
+                          HR</div>
+                        <div class="d-flex gap-4">
+                          <div class="d-flex align-items-center gap-2">
+                            <input checked type="checkbox" value="yes">
+                            <label for="fresher-yes">Yes</label>
+                          </div>
+                          <div class="d-flex align-items-center gap-2">
+                            <input type="checkbox" value="no">
+                            <label for="fresher-no">No</label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="mt-4">
+                        <div class="fw-semibold fs-6 mb-2">Update
+                          From Manager</div>
+                        <div>
+                          <button class="btn received active px-4 py-2 me-2">Received</button>
+                          <button class="btn not-received  px-4 py-2">Not
+                            Received</button>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div>
+                        <div class="fw-semibold fs-6 mb-2">Issued
+                          Date</div>
+                        <div>
+                          <input type="date" class="form-control" name id>
+                        </div>
+                      </div>
+
+                      <div class="mt-4">
+                        <div class="fw-semibold fs-6 mb-2">Received
+                          Date</div>
+                        <div>
+                          <input type="date" class="form-control" name id>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-2 text-start">
+                  <button class="btn submit-btn px-4 py-2">Submit</button>
+                </div>
+
+              </div>
+
+              <hr>
+              <div class="row my-3">
+                <div class="col-4 text-start">
+                  <div class="fw-semibold fs-6">Has ID
+                    card been issued?</div>
+
+                </div>
+                <div class="col-6 text-start">
+                  <div class="d-flex gap-4">
+                    <div>
+                      <div>
+                        <div class="fw-semibold fs-6 mb-2">From
+                          HR</div>
+                        <div class="d-flex gap-4">
+                          <div class="d-flex align-items-center gap-2">
+                            <input checked type="checkbox" value="yes">
+                            <label for="fresher-yes">Yes</label>
+                          </div>
+                          <div class="d-flex align-items-center gap-2">
+                            <input type="checkbox" value="no">
+                            <label for="fresher-no">No</label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="mt-4">
+                        <div class="fw-semibold fs-6 mb-2">Update
+                          From Manager</div>
+                        <div>
+                          <button class="btn received  px-4 py-2 me-2">Received</button>
+                          <button class="btn not-received active  px-4 py-2">Not
+                            Received</button>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div>
+                        <div class="fw-semibold fs-6 mb-2">Issued
+                          Date</div>
+                        <div>
+                          <input type="date" class="form-control" name id>
+                        </div>
+                      </div>
+
+                      <div class="mt-4">
+                        <div class="fw-semibold fs-6 mb-2">Received
+                          Date</div>
+                        <div>
+                          <input type="date" class="form-control" name id>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-2 text-start">
+                  <button class="btn submit-btn px-4 py-2">Submit</button>
+                </div>
+
+              </div>
+
+              <hr>
+              <div class="row my-3">
+                <div class="col-4 text-start">
+                  <div class="fw-semibold fs-6">Has
+                    appointment order been
+                    received?</div>
+
+                </div>
+                <div class="col-6 text-start">
+                  <div class="d-flex gap-4">
+                    <div>
+                      <div>
+                        <div class="fw-semibold fs-6 mb-2">From
+                          HR</div>
+                        <div class="d-flex gap-4">
+                          <div class="d-flex align-items-center gap-2">
+                            <input checked type="checkbox" value="yes">
+                            <label for="fresher-yes">Yes</label>
+                          </div>
+                          <div class="d-flex align-items-center gap-2">
+                            <input type="checkbox" value="no">
+                            <label for="fresher-no">No</label>
+                          </div>
+                        </div>
+                      </div>
+124
+                      <div class="mt-4">
+                        <div class="fw-semibold fs-6 mb-2">Update
+                          From Manager</div>4
+
+
+                        <div>
+                          <input class="d-none" name="${d.emp_no}-row1-update-from-manager" type="radio" name="" id="${d.emp_no}-row1-received">
+                          <label for="${d.emp_no}-row1-received" class="btn received px-4 py-2 me-2">Received</label>
+                          <input class="d-none" name="${d.emp_no}-row1-update-from-manager" name="" id="not-received" type="radio" name="" id="${d.emp_no}-row1-not-received">
+                          <label for="${d.emp_no}-row1-not-received" class="btn not-received  px-4 py-2">Not
+                            Received</label>
+                        </div>
+
+
+                      </div>
+                    </div>
+                    <div>
+                      <div>
+                        <div class="fw-semibold fs-6 mb-2">Issued
+                          Date</div>
+                        <div>
+                          <input type="date" class="form-control" name id>
+                        </div>
+                      </div>
+
+                      <div class="mt-4">
+                        <div class="fw-semibold fs-6 mb-2">Received
+                          Date</div>
+                        <div>
+                          <input type="date" class="form-control" name id>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-2 text-start">
+                  <button class="btn submit-btn px-4 py-2">Submit</button>
+                </div>
+
+              </div>
+
+              <hr>
+              <div class="row my-3">
+                <div class="col-4 text-start">
+                  <div class="fw-semibold fs-6">Did we get
+                    original certificate?</div>
+
+                </div>
+                <div class="col-8 text-start">
+                  <div class="d-flex align-items-center flex-wrap gap-4">
+                    <div>
+                      <div>
+                        <div class="fw-semibold fs-6 mb-2">From
+                          HR</div>
+                        <div class="d-flex gap-4">
+                          <div class="d-flex align-items-center gap-2">
+                            <input checked type="checkbox" value="yes">
+                            <label for="fresher-yes">Yes</label>
+                          </div>
+                          <div class="d-flex align-items-center gap-2">
+                            <input type="checkbox" value="no">
+                            <label for="fresher-no">No</label>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div class="d-flex align-items-center flex-wrap gap-2">
+                      <div>
+                        <input class="d-none" type="file" id="file-input">
+                        <label class="form-control mb-0 d-flex  gap-2 align-items-center" for="file-input">
+                          <svg width="16" height="16" viewBox="0 0 18 19" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M17.112 18.0974H1.34662C0.87547 18.0974 0.476807 17.735 0.476807 17.2639V9.2906C0.476807 8.83757 0.857349 8.45703 1.34662 8.45703C1.83589 8.45703 2.21643 8.81945 2.21643 9.2906V16.4484H16.2603V9.2906C16.2603 8.83757 16.6408 8.45703 17.1301 8.45703C17.6193 8.45703 17.9999 8.81945 17.9999 9.2906V17.2639C17.9636 17.7169 17.5831 18.0974 17.112 18.0974Z"
+                              fill="#9F212C" />
+                            <path
+                              d="M13.2159 4.0902L9.86353 0.737799C9.53735 0.411619 8.99372 0.411619 8.64942 0.737799L5.26078 4.0902C5.09769 4.25329 5.00708 4.47074 5.00708 4.70632C5.00708 4.94189 5.09769 5.14122 5.26078 5.30431C5.42386 5.4674 5.64132 5.55801 5.85877 5.55801C6.09434 5.55801 6.3118 5.4674 6.47489 5.30431L8.32324 3.47408V12.0816C8.32324 12.589 8.7219 12.9876 9.22929 12.9876C9.73668 12.9876 10.1353 12.589 10.1353 12.0816V3.43784L12.0018 5.30431C12.328 5.63049 12.8716 5.63049 13.2159 5.30431C13.379 5.14122 13.4696 4.92377 13.4696 4.70632C13.4696 4.47074 13.379 4.25329 13.2159 4.0902Z"
+                              fill="#9F212C" />
+                          </svg>
+                          Upload Certificate
+                          Photo</label>
+                      </div>
+                      <div>
+                        <input class="form-control" type="text" placeholder="Enter Certificate Number" name id>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+
             </div>
-            <!-- end row -->
           </div>
-          <!-- ========== title-wrapper end ========== -->
+        </div>
 
-
-         
 
 
         
-       
-        </div>
-        <!-- end container -->
-      </section>
-      <!-- ========== section end ========== -->
 
-      <!-- ========== footer start =========== -->
-      <footer class="footer">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-12">
-              <div class="copyright text-center">
-                <p class="text-sm">
-                  JewelOne © 2024 All Rights Reserved. Developed by
-                  <a href="https://brightbridge.co/" rel="nofollow" target="_blank">
-                    BBIT
-                  </a>
-                </p>
-              </div>
+
+
+
+
+
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- ========== section end ========== -->
+
+    <!-- ========== footer start =========== -->
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="copyright text-center">
+              <p class="text-sm">
+                JewelOne © 2024 All Rights Reserved. Developed by
+                <a href="https://brightbridge.co/" rel="nofollow" target="_blank">
+                  BBIT
+                </a>
+              </p>
             </div>
-            
           </div>
-          <!-- end row -->
+
         </div>
-        <!-- end container -->
-      </footer>
-      <!-- ========== footer end =========== -->
-    </main>
-    <!-- ======== main-wrapper end =========== -->
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+    </footer>
+    <!-- ========== footer end =========== -->
+  </main>
+  <!-- ======== main-wrapper end =========== -->
 
-    <!-- ========= All Javascript files linkup ======== -->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/Chart.min.js"></script>
-    <script src="assets/js/dynamic-pie-chart.js"></script>
-    <script src="assets/js/moment.min.js"></script>
-    <script src="assets/js/fullcalendar.js"></script>
-    <script src="assets/js/jvectormap.min.js"></script>
-    <script src="assets/js/world-merc.js"></script>
-    <script src="assets/js/polyfill.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
-    
+  <!-- ========= All Javascript files linkup ======== -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/Chart.min.js"></script>
+  <script src="assets/js/dynamic-pie-chart.js"></script>
+  <script src="assets/js/moment.min.js"></script>
+  <script src="assets/js/fullcalendar.js"></script>
+  <script src="assets/js/jvectormap.min.js"></script>
+  <script src="assets/js/world-merc.js"></script>
+  <script src="assets/js/polyfill.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
 
 
 
-  </body>
+
+</body>
+
 </html>
