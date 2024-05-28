@@ -691,8 +691,13 @@ table.dataTable > tbody > tr:first-child > *,div.dt-container.dt-empty-footer tb
 .employee-onboarding .table .table tr th{
   color: #2D2D2D;
 }
-
-.employee-onboarding .table .table tr td{
+.employee-onboarding .table th{
+  background-color: #E4E7EC;
+}
+.employee-onboarding .table .table th{
+  background-color: #fff;
+}
+.employee-onboarding .table tr td{
   color: #2D2D2D;
   border: 1px solid #E4E7EC;
 }
