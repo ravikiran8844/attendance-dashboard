@@ -604,17 +604,18 @@ margin-top: 5px;
 input[type="checkbox"]{
   accent-color:#9F212C !important;
 }
-.employee-onboarding .card input[type="checkbox"]{
+.employee-onboarding input[type="checkbox"]{
   accent-color:#9F212C !important;
   width: 26px;
   height: 26px;
   border-radius: 3.6px 0px 0px 0px;
 
 }
-.employee-onboarding .card .submit-btn{
+.employee-onboarding .submit-btn{
   border: 1px solid #C4843E !important;
   color: #C4843E !important;
   background-color: #fff !important;
+  font-weight: 500;
 }
 .employee-onboarding button{
   border: 1px solid #E3E3E3 !important;
@@ -691,8 +692,13 @@ table.dataTable > tbody > tr:first-child > *,div.dt-container.dt-empty-footer tb
 .employee-onboarding .table .table tr th{
   color: #2D2D2D;
 }
-.employee-onboarding .table th{
-  background-color: #E4E7EC;
+.employee-onboarding .table th,.employee-onboarding .table td{
+  background-color: #fff;
+  border: 1px solid #EAECF0
+}
+
+.employee-onboarding .table{
+  border: 1px solid #EAECF0
 }
 .employee-onboarding .table .table th{
   background-color: #fff;
@@ -727,11 +733,24 @@ input[type='radio']:checked + label.not-received{
 }
 
 
+.table-bg{
+  background: #F9FAFB !important;
+
+}
 
 
 
-
-
+.employee-onboarding input.form-control,.employee-onboarding label.form-control
+{
+  height: 36px !important;
+}
+.employee-onboarding .btn
+{
+  height: 36px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 
 
