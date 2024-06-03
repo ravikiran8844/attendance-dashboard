@@ -725,3 +725,25 @@ input[type='radio']:checked + label.not-received{
 .employee-onboarding .card input:disabled, .employee-onboarding .card select:disabled,.employee-onboarding .card button:disabled{
   opacity: .4;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-btn{
+  background: linear-gradient(89.82deg, #9F212C 0.84%, #C4843E 100.53%) !important;
+  color: #fff !important;
+  padding: 5px 20px;
+}
