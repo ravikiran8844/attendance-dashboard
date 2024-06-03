@@ -642,10 +642,12 @@ input[type="checkbox"]{
 table.dataTable > tbody > tr:first-child > *,div.dt-container.dt-empty-footer tbody > tr:last-child > *{
  padding-bottom: 20px !important;
 }
-.employee-onboarding tbody .card{
-  border-top: 1px solid #C4843E !important;
+.employee-onboarding .table .table{
+  border: none;
+  border: 1px solid #C4843E !important;
   box-shadow: 0px 4px 20px 0px #AEAEAE75;
-  border-radius: 8px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 .employee-onboarding td{
   padding:10px !important;
@@ -685,7 +687,7 @@ table.dataTable > tbody > tr:first-child > *,div.dt-container.dt-empty-footer tb
 
 
 .employee-onboarding .table .table tr th{
-  border-top: 1px solid #C4843E !important;
+  /* border-top: 1px solid #C4843E !important; */
   padding: 10px;
 }
 
