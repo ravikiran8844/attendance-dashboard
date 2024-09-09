@@ -2695,7 +2695,7 @@ h6,
   background: #fff;
   position: sticky;
   top: 0;
-  z-index: 99;
+  z-index: 9999;
   border-bottom: 1px solid #ECECEC;
 }
 .header .header-left .menu-toggle-btn .main-btn {
